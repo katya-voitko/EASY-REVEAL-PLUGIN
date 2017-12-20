@@ -9,14 +9,14 @@ Easy load simple plugin :
 ### HTML:
 
 Add class "easy" to any element you wish to easy load
-//
+
 <div class="easy"></div>
-//
+
 
 ### CSS:
 
 Style your class and add those properties
-``
+
 .easy{
 	opacity: 0;
 	position: relative;
@@ -24,17 +24,16 @@ Style your class and add those properties
 
 
 } 
-``
+
 
 ### JS:
 
 and finaly just add thi to your JS file:
 
-``
+
 $(document).ready(function(){
 
 
-    // EASY-REVEAL
 
 
     window.onscroll=function(ev){
@@ -85,4 +84,4 @@ $(document).ready(function(){
 
  });
 
-``
+
