@@ -6,22 +6,27 @@ Easy load simple plugin :
 
 ## How to install?
 
-###HTML:
+### HTML:
 
-Add class "easy" to any element you wish to easy load ``<div class="easy"></div>``
+Add class "easy" to any element you wish to easy load
+`` 
+<div class="easy"></div>
+``
 
-###CSS:
+### CSS:
 
 Style your class and add those properties
-``.easy{
+``
+.easy{
 	opacity: 0;
 	position: relative;
 	bottom:-20px;
 
 
-} ``
+} 
+``
 
-###JS:
+### JS:
 
 and finaly just add thi to your JS file:
 
