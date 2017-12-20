@@ -1,56 +1,83 @@
-# template-gulp
+# My Poezen Easy Reveal
 
-Un template Gulp avec quelques dépendances renseignées côté json :
-
-- Gulp
-- Autoprefixer
-- Clean-css
-- Htmlmin
-- Plumber
-- Sass
-- Sourcemaps
-- Uglify
-- Plumber
-- Notify
-- Imagemin
-
-## Comment installer Gulp ?
-
-Avant tout, installez Node.js.
-
-Ensuite, installez Gulp en global sur votre machine :
-
-`npm install gulp -g`
-
-Finalement, puisque le .json est déjà bien fourni en dépendances, il vous suffit de vous placer à la racine de votre projet (là où se trouvent les dossiers src, dist et les fichiers gulpfile.js et package.json) et de lancer :
-
-`npm install`
-
-Ensuite, toujours à la racine lancez :
-
-`gulp`
-
-Et voilà :)
-
-## Pour ajouter l'étape de conversion de ES6 à ES5
-
-Tout d'abord, installez Babel sur votre machine
-
-`npm install babel-core babel-preset-es2015`
-
-Puis ajoutez le plugin-in Babel pour Gulp
-
-`npm install --save gulp-babel`
-
-Ensuite, dans votre gulpfile.js
-
-`var babel = require('gulp-babel');`
-
-`gulp.task("default", function () {
-  return gulp.src("src/app.js")
-    .pipe(babel({ presets: ['es2015'] }))
-    .pipe(gulp.dest("dist"));
-});`
+Easy load simple plugin :
 
 
-Et voilà, vos ES6 seront transpilés en ES5 :)
+
+## How to install?
+
+###HTML:
+
+Add class "easy" to any element you wish to easy load ``<div class="easy"></div>``
+
+###CSS:
+
+Style your class and add those properties
+``.easy{
+	opacity: 0;
+	position: relative;
+	bottom:-20px;
+
+
+} ``
+
+###JS:
+
+and finaly just add thi to your JS file:
+
+``
+$(document).ready(function(){
+
+
+    // EASY-REVEAL
+
+
+    window.onscroll=function(ev){
+      easyReveal();
+    };
+
+    function elementInViewport(el) {
+      var top = el.offsetTop;
+      var left = el.offsetLeft;
+      var width = el.offsetWidth;
+      var height = el.offsetHeight;
+
+      while(el.offsetParent) {
+        el = el.offsetParent;
+        top += el.offsetTop;
+        left += el.offsetLeft;
+      }
+
+      return (
+        top >= window.pageYOffset &&
+        left >= window.pageXOffset &&
+        (top + height) <= (window.pageYOffset + window.innerHeight) &&
+        (left + width) <= (window.pageXOffset + window.innerWidth)
+      );
+    }
+
+
+    function easyReveal(){
+
+     var easyItem=  document.getElementsByClassName("easy");
+     console.log(easyItem);
+
+        for(var i=0; i<easyItem.length; i++){
+            if(elementInViewport(easyItem[i])){
+              $(easyItem[i]).animate({
+        opacity: 1,
+        bottom: 0
+
+
+
+      }, 900 );
+    }
+
+
+    }
+
+      }
+
+ });
+
+``
