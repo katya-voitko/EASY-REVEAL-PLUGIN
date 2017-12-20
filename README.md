@@ -9,9 +9,9 @@ Easy load simple plugin :
 ### HTML:
 
 Add class "easy" to any element you wish to easy load
-`` 
+//
 <div class="easy"></div>
-``
+//
 
 ### CSS:
 
