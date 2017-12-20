@@ -2,6 +2,8 @@
 
 Easy load simple plugin :
 
+Demo: http://cepegra-labs.be/webdesign/2017/kvoi/EASY-REVEAL-PLUGIN/dist/
+
 
 
 ## How to install?
